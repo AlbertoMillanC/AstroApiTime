@@ -1,28 +1,29 @@
 ---
-import GetTime from "./components/GetTime";
-import AddTime from "../AddTime";
+import AdviceGenerator from '../components/AdviceGenerator';
+import getProducts from '../getAdvice';
 
-const time = await AddTime();
+const stringify = await getProducts()
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>ApiTime</title>
-	</head><div class="text-center">
-		<div
-			class="text-2xl font-bold text-center text-zinc-700 bg-slate-200 rounded-full bol px-8 py-8 mb-4 p-4"
-		>
-			Generador de frases con Astro y JS
-		</div>
-		<GetTime time={time} client:load />
-	</div>
-
-	<body> </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <div >
+    <div>Generador de frases con Astro y JS</div>
+    <AdviceGenerator stringify={stringify} client:load />
+  </div>
+</head>
+<body>
+</body>
 </html>
+	
+		
+	
+
 
 <style>
 	main {
